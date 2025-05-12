@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel & Tourism Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #0c1755;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Main Container Styles */
+        .main-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        #form-container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            text-align: center;
+            color: #0c1755;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #0c1755;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        
+        .error-message {
+            color: red;
+            font-size: 13px;
+            margin-top: 3px;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 5px;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+        }
+        
+        .radio-group input {
+            width: auto;
+            margin-right: 5px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        
+        .checkbox-group input {
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .checkbox-group label {
+            margin-bottom: 0;
+        }
+        
+        button {
+            width: 100%;
+            background-color: #0c1755;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: #0a123d;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #0c1755;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .footer-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-info {
+            margin-bottom: 15px;
+        }
+        
+        .social-icons {
+            margin-bottom: 15px;
+        }
+        
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+        
+        .copyright {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* Simple Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+            }
+            
+            .radio-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        #scrollToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: #222;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: none;
+    z-index: 999;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  #scrollToTop:hover {
+    background-color: #444;
+    transform: scale(1.1);
+  }
+  
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-globe"></i>
+                <span>TravelWorld</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="ExploreWorld.html">Home</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Tours</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="main-container">
+        <div id="form-container">
+            <h2>Travel & Tourism Registration</h2>
+            
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                    <div class="error-message" id="fullname-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <div class="error-message" id="email-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <div class="error-message" id="password-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                    <div class="error-message" id="confirm-password-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" placeholder="Enter your age" required>
+                    <div class="error-message" id="age-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" value="male"> Male</label>
+                        <label><input type="radio" name="gender" value="female"> Female</label>
+                        <label><input type="radio" name="gender" value="other"> Other</label>
+                    </div>
+                    <div class="error-message" id="gender-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    <div class="error-message" id="phone-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <select id="country" name="country" required>
+                        <option value="">Select a country</option>
+                        <option value="USA">USA</option>
+                        <option value="Canada">Canada</option>
+                        <option value="UK">UK</option>
+                        <option value="India">India</option>
+                        <option value="Australia">Australia</option>
+                    </select>
+                    <div class="error-message" id="country-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Travel Preferences:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="travel_type" value="adventure"> Adventure</label>
+                        <label><input type="radio" name="travel_type" value="relaxation"> Relaxation</label>
+                        <label><input type="radio" name="travel_type" value="cultural"> Cultural</label>
+                    </div>
+                    <div class="error-message" id="travel-type-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Preferred Language:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="language" value="english"> English</label>
+                        <label><input type="radio" name="language" value="spanish"> Spanish</label>
+                        <label><input type="radio" name="language" value="french"> French</label>
+                    </div>
+                    <div class="error-message" id="language-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message or Queries:</label>
+                    <textarea id="message" name="message" placeholder="Enter your message or queries" rows="4"></textarea>
+                    <div class="error-message" id="message-error"></div>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms">
+                    <label for="terms">I accept the Terms & Conditions</label>
+                    <div class="error-message" id="terms-error"></div>
+                </div>
+                
+                <button type="button" id="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+         <!-- Scroll to Top Floating Icon -->
+<div id="scrollToTop">
+    <a>↑</a>
+  </div>
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>TravelWorld - Your gateway to amazing destinations</p>
+                <p>123 Travel Street, Tourism City | info@travelworld.com | +1 (234) 567-8900</p>
+            </div>
+            
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 TravelWorld. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+        <!-- Scroll to Top Floating Icon -->
+<div id="scrollToTop">
+    <a>↑</a>
+  </div>
+    <script>
+        function validateForm() {
+            // Get all form elements
+            const fullname = document.getElementById("fullname");
+            const email = document.getElementById("email");
+            const password = document.getElementById("password");
+            const confirmPassword = document.getElementById("confirm-password");
+            const age = document.getElementById("age");
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const phone = document.getElementById("phone");
+            const country = document.getElementById("country");
+            const travelType = document.querySelector('input[name="travel_type"]:checked');
+            const language = document.querySelector('input[name="language"]:checked');
+            const message = document.getElementById("message");
+            const terms = document.getElementById("terms");
+
+            // Initialize validation variables
+            let errorMessage = "";
+            let isValid = true;
+
+            // Clear previous error styles
+            const inputs = [fullname, email, password, confirmPassword, age, phone, country, message];
+            inputs.forEach(input => input.style.border = "");
+            
+            // Clear previous error messages
+            const errorElements = document.querySelectorAll('.error-message');
+            errorElements.forEach(element => element.innerText = "");
+
+            // Validate fullname
+            if (fullname.value.trim() === "") {
+                document.getElementById("fullname-error").innerText = "Please enter your full name.";
+                fullname.style.border = "2px solid red";
+                isValid = false;
+            } else if (!/^[a-zA-Z\s]+$/.test(fullname.value.trim())) {
+                document.getElementById("fullname-error").innerText = "Name must contain only letters.";
+                fullname.style.border = "2px solid red";
+                isValid = false;
+            }
+
+            // Validate email
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!email.value.match(emailPattern)) {
+                document.getElementById("email-error").innerText = "Please enter a valid email address.";
+                email.style.border = "2px solid red";
+                isValid = false;
+            }
+
+            // Validate password
+            if (password.value === "") {
+                document.getElementById("password-error").innerText = "Please enter a password.";
+                password.style.border = "2px solid red";
+                isValid = false;
+            } else if (password.value.length < 8) {
+                document.getElementById("password-error").innerText = "Password must be at least 8 characters.";
+                password.style.border = "2px solid red";
+                isValid = false;
+            }
+
+            // Validate confirm password
+            if (confirmPassword.value === "") {
+                document.getElementById("confirm-password-error").innerText = "Please confirm your password.";
+                confirmPassword.style.border = "2px solid red";
+                isValid = false;
+            } else if (password.value !== confirmPassword.value) {
+                document.getElementById("confirm-password-error").innerText = "Passwords do not match.";
+                confirmPassword.style.border = "2px solid red";
+                isValid = false;
+            }
+
+            // Validate age
+            if (age.value === "") {
+                document.getElementById("age-error").innerText = "Please enter your age.";
+                age.style.border = "2px solid red";
+                isValid = false;
+            } else if (age.value < 18) {
+                document.getElementById("age-error").innerText = "You must be 18 or older.";
+                age.style.border = "2px solid red";
+                isValid = false;
+            }
+
+            // Validate gender
+            if (!gender) {
+                document.getElementById("gender-error").innerText = "Please select your gender.";
+                isValid = false;
+            }
+
+            // Validate phone number
+            const phonePattern = /^[0-9]{10}$/;
+            if (!phone.value.match(phonePattern)) {
+                document.getElementById("phone-error").innerText = "Please enter a valid 10-digit phone number.";
+                phone.style.border = "2px solid red";
+                isValid = false;
+            }
+
+            // Validate country
+            if (country.value === "") {
+                document.getElementById("country-error").innerText = "Please select a country.";
+                country.style.border = "2px solid red";
+                isValid = false;
+            }
+
+            // Validate travel type
+            if (!travelType) {
+                document.getElementById("travel-type-error").innerText = "Please select your travel preference.";
+                isValid = false;
+            }
+
+            // Validate language
+            if (!language) {
+                document.getElementById("language-error").innerText = "Please select your preferred language.";
+                isValid = false;
+            }
+
+            // Validate message
+            if (message.value.trim() === "") {
+                document.getElementById("message-error").innerText = "Please enter a message or question.";
+                message.style.border = "2px solid red";
+                isValid = false;
+            }
+
+            // Validate terms
+            if (!terms.checked) {
+                document.getElementById("terms-error").innerText = "You must accept the terms and conditions.";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Store data in localStorage
+        document.getElementById("submit-btn").addEventListener("click", function(event) {
+            event.preventDefault();
+
+            if (validateForm()) {
+                // Collect form data
+                let formData = {
+                    fullname: document.getElementById("fullname").value,
+                    email: document.getElementById("email").value,
+                    password: document.getElementById("password").value,
+                    age: document.getElementById("age").value,
+                    gender: document.querySelector('input[name="gender"]:checked').value,
+                    phone: document.getElementById("phone").value,
+                    country: document.getElementById("country").value,
+                    travelType: document.querySelector('input[name="travel_type"]:checked').value,
+                    language: document.querySelector('input[name="language"]:checked').value,
+                    message: document.getElementById("message").value,
+                    terms: document.getElementById("terms").checked
+                };
+
+                // Convert JSON object to string
+                let jsonString = JSON.stringify(formData);
+
+                // Store in localStorage
+                localStorage.setItem("travelUserData", jsonString);
+
+                alert("Registration completed successfully!");
+                document.getElementById("registration-form").reset();
+            }
+        });
+
+        // Update email in localStorage
+        function updateEmail(newEmail) {
+            let storedData = localStorage.getItem("travelUserData");
+
+            if (storedData) {
+                let parsedData = JSON.parse(storedData); // Parse JSON
+                parsedData.email = newEmail; // Update email
+                let modifiedJsonString = JSON.stringify(parsedData); // Convert back to string
+
+                localStorage.setItem("travelUserData", modifiedJsonString);
+                alert("Email updated successfully!");
+            } else {
+                alert("No user data found!");
+            }
+        }
+
+        // Retrieve stored data
+        function getUserData() {
+            let storedData = localStorage.getItem("travelUserData");
+
+            if (storedData) {
+                let parsedData = JSON.parse(storedData);
+                console.log("Retrieved Travel User Data:", parsedData);
+                
+                // Optionally, you can pre-fill the form with stored data
+                // This code will pre-fill the form if data exists in localStorage
+                if (parsedData) {
+                    document.getElementById("fullname").value = parsedData.fullname || "";
+                    document.getElementById("email").value = parsedData.email || "";
+                    document.getElementById("phone").value = parsedData.phone || "";
+                    document.getElementById("country").value = parsedData.country || "";
+                    document.getElementById("age").value = parsedData.age || "";
+                    document.getElementById("message").value = parsedData.message || "";
+                    
+                    // Handle radio buttons
+                    if (parsedData.gender) {
+                        document.querySelector(`input[name="gender"][value="${parsedData.gender}"]`).checked = true;
+                    }
+                    if (parsedData.travelType) {
+                        document.querySelector(`input[name="travel_type"][value="${parsedData.travelType}"]`).checked = true;
+                    }
+                    if (parsedData.language) {
+                        document.querySelector(`input[name="language"][value="${parsedData.language}"]`).checked = true;
+                    }
+                }
+            } else {
+                console.log("No travel user data found in localStorage.");
+            }
+        }
+
+        // Call getUserData on page load
+        window.onload = getUserData;
+        // Scroll to Top
+
+  const scrollIcon = document.getElementById("scrollToTop");
+
+// Show the icon after scrolling down a bit
+window.onscroll = function () {
+  if (document.documentElement.scrollTop > 100 || document.body.scrollTop > 100) {
+    scrollIcon.style.display = "block";
+  } else {
+    scrollIcon.style.display = "none";
+  }
+};
+
+// Scroll smoothly to top when icon is clicked
+scrollIcon.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+    </script>
+</body>
+</html>
