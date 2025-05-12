@@ -1,0 +1,192 @@
+<!-- progress.html (Progress Tracking Page) -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PROS DIARY - Progress Tracking</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="progress.css">
+</head>
+<body class="progress-page">
+    <!-- Background elements -->
+    <div class="background-container">
+        <div class="diagonal-line"></div>
+        <div class="geometric-shape shape1"></div>
+        <div class="geometric-shape shape2"></div>
+        <div class="geometric-shape shape3"></div>
+    </div>
+
+    <div class="content-wrapper">
+        <header class="progress-header">
+            <h1>TRACK PROGRESS</h1>
+            <p>VISUALIZE YOUR IMPROVEMENT OVER TIME</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="journal.html">JOURNAL</a></li>
+                <li><a href="progress.html" class="active">PROGRESS</a></li>
+                <li><a href="login.html" class="login-btn" id="loginStatus">LOGIN</a></li>
+            </ul>
+        </nav>
+        
+        <main class="progress-main">
+            <!-- Login required message (will be hidden when logged in) -->
+            <div class="login-required" id="loginRequired">
+                <div class="message-box">
+                    <h2>LOGIN REQUIRED</h2>
+                    <p>You need to log in to view your progress tracking.</p>
+                    <a href="login.html" class="cta-button primary">LOGIN NOW</a>
+                </div>
+            </div>
+            
+            <!-- Progress content (will be shown when logged in) -->
+            <div class="progress-content" id="progressContent" style="display: none;">
+                <section class="progress-summary">
+                    <h2>PROGRESS SUMMARY</h2>
+                    <div class="stat-cards">
+                        <div class="stat-card">
+                            <div class="stat-icon">📝</div>
+                            <div class="stat-info">
+                                <h3>TOTAL ENTRIES</h3>
+                                <div class="stat-value">15</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📅</div>
+                            <div class="stat-info">
+                                <h3>STREAK</h3>
+                                <div class="stat-value">5 DAYS</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🏆</div>
+                            <div class="stat-info">
+                                <h3>COMPLETION RATE</h3>
+                                <div class="stat-value">85%</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="activity-graph">
+                    <h2>ACTIVITY OVER TIME</h2>
+                    <div class="graph-container">
+                        <div class="graph-placeholder">
+                            <!-- This would be replaced with actual graph using JavaScript charts library -->
+                            <div class="graph-mock">
+                                <div class="bar-container">
+                                    <div class="bar" style="height: 30%"></div>
+                                    <div class="bar" style="height: 45%"></div>
+                                    <div class="bar" style="height: 60%"></div>
+                                    <div class="bar" style="height: 50%"></div>
+                                    <div class="bar" style="height: 70%"></div>
+                                    <div class="bar" style="height: 65%"></div>
+                                    <div class="bar" style="height: 80%"></div>
+                                </div>
+                                <div class="x-axis">
+                                    <span>APR 5</span>
+                                    <span>APR 6</span>
+                                    <span>APR 7</span>
+                                    <span>APR 8</span>
+                                    <span>APR 9</span>
+                                    <span>APR 10</span>
+                                    <span>APR 11</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="goal-tracking">
+                    <h2>GOAL TRACKING</h2>
+                    <div class="goals-container">
+                        <div class="goal-card">
+                            <h3>DAILY JOURNAL ENTRY</h3>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                            <div class="goal-stats">
+                                <span>80% COMPLETE</span>
+                                <span>TARGET: 30 DAYS</span>
+                            </div>
+                        </div>
+                        
+                        <div class="goal-card">
+                            <h3>STRATEGY DEVELOPMENT</h3>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 60%"></div>
+                            </div>
+                            <div class="goal-stats">
+                                <span>60% COMPLETE</span>
+                                <span>TARGET: 10 STRATEGIES</span>
+                            </div>
+                        </div>
+                        
+                        <div class="goal-card">
+                            <h3>PERFORMANCE ANALYSIS</h3>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 45%"></div>
+                            </div>
+                            <div class="goal-stats">
+                                <span>45% COMPLETE</span>
+                                <span>TARGET: 20 ANALYSES</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="add-goal">
+                        <button class="add-goal-btn">+ ADD NEW GOAL</button>
+                    </div>
+                </section>
+                
+                <section class="achievement-badges">
+                    <h2>ACHIEVEMENTS</h2>
+                    <div class="badges-container">
+                        <div class="badge">
+                            <div class="badge-icon unlocked">🌟</div>
+                            <h3>FIRST ENTRY</h3>
+                            <p>Created your first journal entry</p>
+                        </div>
+                        <div class="badge">
+                            <div class="badge-icon unlocked">🔥</div>
+                            <h3>5 DAY STREAK</h3>
+                            <p>Logged entries for 5 consecutive days</p>
+                        </div>
+                        <div class="badge">
+                            <div class="badge-icon">📚</div>
+                            <h3>DEDICATED WRITER</h3>
+                            <p>Created 20 journal entries</p>
+                        </div>
+                        <div class="badge">
+                            <div class="badge-icon">🧠</div>
+                            <h3>STRATEGIST</h3>
+                            <p>Developed 10 unique strategies</p>
+                        </div>
+                        <div class="badge">
+                            <div class="badge-icon">⚡</div>
+                            <h3>PERFORMANCE MASTER</h3>
+                            <p>Completed 15 performance analyses</p>
+                        </div>
+                        <div class="badge">
+                            <div class="badge-icon">💯</div>
+                            <h3>PERFECTIONIST</h3>
+                            <p>Maintained a 30-day streak</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 PROS DIARY | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </footer>
+    </div>
+    
+    <!-- Script for handling progress tracking functionality -->
+    <script src="progress.js"></script>
+</body>
+</html>
