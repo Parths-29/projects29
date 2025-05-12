@@ -1,0 +1,319 @@
+/* journal.css - Styles specific to the journal page */
+
+/* Journal page specific styles */
+.journal-header {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.journal-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background-color: var(--valorant-red);
+}
+
+.journal-main {
+    position: relative;
+    min-height: 600px;
+}
+
+/* Login required message */
+.login-required {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(17, 17, 17, 0.5);
+    border-radius: 5px;
+}
+
+.message-box {
+    background-color: var(--valorant-dark-gray);
+    padding: 40px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 500px;
+    border-left: 4px solid var(--valorant-red);
+}
+
+.message-box h2 {
+    color: var(--valorant-white);
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.message-box p {
+    margin-bottom: 25px;
+}
+
+/* New Entry Section */
+.new-entry {
+    background-color: var(--valorant-dark-gray);
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    border-left: 4px solid var(--valorant-red);
+}
+
+.new-entry h2 {
+    margin-bottom: 20px;
+    color: var(--valorant-white);
+    letter-spacing: 2px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--valorant-light-gray);
+    letter-spacing: 1px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: rgba(17, 17, 17, 0.7);
+    border: 1px solid var(--valorant-dark-gray);
+    border-radius: 3px;
+    color: var(--valorant-white);
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--valorant-red);
+}
+
+.tags .tag-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(17, 17, 17, 0.7);
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tag:hover {
+    background-color: rgba(255, 70, 85, 0.2);
+}
+
+.tag input {
+    margin-right: 8px;
+}
+
+.submit-button {
+    background-color: var(--valorant-red);
+    color: var(--valorant-white);
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #e73b49;
+}
+
+/* Past Entries Section */
+.past-entries {
+    background-color: var(--valorant-dark-gray);
+    padding: 30px;
+    border-radius: 5px;
+    border-left: 4px solid var(--valorant-red);
+}
+
+.past-entries h2 {
+    margin-bottom: 20px;
+    color: var(--valorant-white);
+    letter-spacing: 2px;
+}
+
+.entry-filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: rgba(17, 17, 17, 0.7);
+    border: 1px solid var(--valorant-dark-gray);
+    border-radius: 3px;
+    color: var(--valorant-white);
+}
+
+.filter-options {
+    display: flex;
+    gap: 15px;
+}
+
+.filter-options select {
+    padding: 10px 15px;
+    background-color: rgba(17, 17, 17, 0.7);
+    border: 1px solid var(--valorant-dark-gray);
+    border-radius: 3px;
+    color: var(--valorant-white);
+    cursor: pointer;
+}
+
+/* Entry Cards */
+.entries-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.entry-card {
+    background-color: rgba(17, 17, 17, 0.7);
+    border-radius: 5px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.entry-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--valorant-red);
+}
+
+.entry-card:hover {
+    transform: translateY(-5px);
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.entry-header h3 {
+    color: var(--valorant-white);
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.entry-date {
+    color: var(--valorant-light-gray);
+    font-size: 0.9em;
+}
+
+.entry-tags {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.entry-tags .tag {
+    background-color: rgba(255, 70, 85, 0.1);
+    font-size: 0.8em;
+    padding: 4px 10px;
+}
+
+.entry-preview {
+    color: var(--valorant-light-gray);
+    margin-bottom: 20px;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.entry-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-button {
+    background-color: transparent;
+    border: 1px solid var(--valorant-light-gray);
+    color: var(--valorant-light-gray);
+    padding: 5px 12px;
+    font-size: 0.8em;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: var(--valorant-light-gray);
+    color: var(--valorant-dark-gray);
+}
+
+.action-button.view:hover {
+    background-color: #4caf50;
+    border-color: #4caf50;
+    color: white;
+}
+
+.action-button.edit:hover {
+    background-color: #2196f3;
+    border-color: #2196f3;
+    color: white;
+}
+
+.action-button.delete:hover {
+    background-color: var(--valorant-red);
+    border-color: var(--valorant-red);
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .entry-filters {
+        flex-direction: column;
+    }
+    
+    .filter-options {
+        width: 100%;
+    }
+    
+    .filter-options select {
+        flex: 1;
+    }
+    
+    .entries-container {
+        grid-template-columns: 1fr;
+    }
+}

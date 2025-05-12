@@ -1,0 +1,524 @@
+/* styles.css - Combined styles for Home and Login pages */
+
+/* Valorant-inspired color palette */
+:root {
+    --valorant-red: #ff4655;
+    --valorant-black: #111;
+    --valorant-dark-gray: #292929;
+    --valorant-light-gray: #ece8e1;
+    --valorant-white: #f9f9f9;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--valorant-black);
+    color: var(--valorant-light-gray);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background elements */
+/* In your styles.css file, modify the background-container */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background-image: url('valorant-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* You might want to add an overlay to ensure text remains readable */
+.background-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.7); /* Semitransparent dark overlay */
+}
+
+.diagonal-line {
+    position: absolute;
+    width: 200%;
+    height: 10px;
+    background-color: var(--valorant-red);
+    transform: rotate(-25deg);
+    top: 30%;
+    left: -50%;
+}
+
+.geometric-shape {
+    position: absolute;
+    background-color: var(--valorant-dark-gray);
+    opacity: 0.5;
+}
+
+.shape1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    right: -100px;
+    transform: rotate(45deg);
+}
+
+.shape2 {
+    width: 200px;
+    height: 200px;
+    bottom: 20%;
+    left: -50px;
+    transform: rotate(30deg);
+}
+
+.shape3 {
+    width: 150px;
+    height: 400px;
+    top: 60%;
+    right: 30%;
+    transform: rotate(65deg);
+    background-color: rgba(255, 70, 85, 0.1); /* Transparent red */
+}
+
+/* Content wrapper */
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ===== HOME PAGE STYLES ===== */
+
+/* Header */
+.home-header {
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.home-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background-color: var(--valorant-red);
+}
+
+header h1 {
+    font-size: 2.8em;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    font-weight: 800;
+    color: var(--valorant-white);
+}
+
+header p {
+    font-size: 1.1em;
+    color: var(--valorant-light-gray);
+    letter-spacing: 1px;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--valorant-dark-gray);
+    margin-bottom: 30px;
+    border-left: 4px solid var(--valorant-red);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    color: var(--valorant-light-gray);
+    text-decoration: none;
+    padding: 15px 25px;
+    display: block;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    background-color: var(--valorant-red);
+    color: var(--valorant-white);
+}
+
+nav a.login-btn {
+    background-color: rgba(255, 70, 85, 0.2);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+    margin-bottom: 60px;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--valorant-white);
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.image-placeholder {
+    background-color: rgba(255, 70, 85, 0.1);
+    height: 300px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 70, 85, 0.2), transparent);
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.cta-button {
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.cta-button.primary {
+    background-color: var(--valorant-red);
+    color: var(--valorant-white);
+}
+
+.cta-button.primary:hover {
+    background-color: #e73b49;
+    transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: var(--valorant-white);
+    border: 2px solid var(--valorant-white);
+}
+
+.cta-button.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Features Section */
+.features {
+    padding: 40px 0;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+    letter-spacing: 2px;
+    color: var(--valorant-white);
+    position: relative;
+}
+
+.features h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--valorant-red);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: var(--valorant-dark-gray);
+    padding: 30px;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-bottom: 3px solid var(--valorant-red);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    color: var(--valorant-white);
+    letter-spacing: 1px;
+}
+
+/* ===== LOGIN PAGE STYLES ===== */
+
+.login-container {
+    max-width: 500px;
+    margin: 80px auto;
+    background-color: rgba(41, 41, 41, 0.8);
+    border-radius: 5px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-top: 4px solid var(--valorant-red);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.login-header h1 {
+    font-size: 2.5em;
+    letter-spacing: 5px;
+    color: var(--valorant-white);
+    margin-bottom: 10px;
+}
+
+.login-header p {
+    color: var(--valorant-light-gray);
+}
+
+.login-form .form-group {
+    margin-bottom: 25px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--valorant-light-gray);
+    letter-spacing: 1px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: rgba(17, 17, 17, 0.7);
+    border: 1px solid var(--valorant-dark-gray);
+    border-radius: 3px;
+    color: var(--valorant-white);
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: var(--valorant-red);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    align-items: center;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 8px;
+}
+
+.forgot-password {
+    color: var(--valorant-light-gray);
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.forgot-password:hover {
+    color: var(--valorant-red);
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--valorant-red);
+    color: var(--valorant-white);
+    border: none;
+    border-radius: 3px;
+    font-size: 1.1em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #e73b49;
+}
+
+.signup-option {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid var(--valorant-dark-gray);
+}
+
+.signup-option a {
+    color: var(--valorant-red);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-option a:hover {
+    text-decoration: underline;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-to-home {
+    color: var(--valorant-light-gray);
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 0;
+}
+
+.back-to-home:hover {
+    color: var(--valorant-red);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+    border-top: 1px solid var(--valorant-dark-gray);
+}
+
+footer a {
+    color: var(--valorant-light-gray);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--valorant-red);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    .hero {
+        flex-direction: column;
+    }
+    
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .cta-buttons {
+        justify-content: center;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2.2em;
+    }
+}
+/* In your styles.css file, modify the background-container */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background-image: url('valorant-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* You might want to add an overlay to ensure text remains readable */
+.background-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.7); /* Semitransparent dark overlay */
+}

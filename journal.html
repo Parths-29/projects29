@@ -1,0 +1,148 @@
+<!-- journal.html (Journal Entries Page) -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PROS DIARY - Journal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="journal.css">
+</head>
+<body class="journal-page">
+    <!-- Background elements -->
+    <div class="background-container">
+        <div class="diagonal-line"></div>
+        <div class="geometric-shape shape1"></div>
+        <div class="geometric-shape shape2"></div>
+        <div class="geometric-shape shape3"></div>
+    </div>
+
+    <div class="content-wrapper">
+        <header class="journal-header">
+            <h1>YOUR JOURNAL</h1>
+            <p>RECORD THOUGHTS, STRATEGIES, AND PROGRESS</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="journal.html" class="active">JOURNAL</a></li>
+                <li><a href="progress.html">PROGRESS</a></li>
+                <li><a href="login.html" class="login-btn" id="loginStatus">LOGIN</a></li>
+            </ul>
+        </nav>
+        
+        <main class="journal-main">
+            <!-- Login required message (will be hidden when logged in) -->
+            <div class="login-required" id="loginRequired">
+                <div class="message-box">
+                    <h2>LOGIN REQUIRED</h2>
+                    <p>You need to log in to view and create journal entries.</p>
+                    <a href="login.html" class="cta-button primary">LOGIN NOW</a>
+                </div>
+            </div>
+            
+            <!-- Journal content (will be shown when logged in) -->
+            <div class="journal-content" id="journalContent" style="display: none;">
+                <section class="new-entry">
+                    <h2>NEW ENTRY</h2>
+                    <form id="entryForm">
+                        <div class="form-group">
+                            <label for="entryTitle">TITLE</label>
+                            <input type="text" id="entryTitle" name="entryTitle" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="entryContent">CONTENT</label>
+                            <textarea id="entryContent" name="entryContent" rows="6" required></textarea>
+                        </div>
+                        
+                        <div class="form-group tags">
+                            <label>TAGS</label>
+                            <div class="tag-options">
+                                <label class="tag"><input type="checkbox" name="tag" value="Strategy"> STRATEGY</label>
+                                <label class="tag"><input type="checkbox" name="tag" value="Improvement"> IMPROVEMENT</label>
+                                <label class="tag"><input type="checkbox" name="tag" value="Reflection"> REFLECTION</label>
+                                <label class="tag"><input type="checkbox" name="tag" value="Goals"> GOALS</label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">SAVE ENTRY</button>
+                    </form>
+                </section>
+                
+                <section class="past-entries">
+                    <h2>PREVIOUS ENTRIES</h2>
+                    <div class="entry-filters">
+                        <div class="search-box">
+                            <input type="text" id="searchEntries" placeholder="Search entries...">
+                        </div>
+                        <div class="filter-options">
+                            <select id="filterTags">
+                                <option value="">ALL TAGS</option>
+                                <option value="Strategy">STRATEGY</option>
+                                <option value="Improvement">IMPROVEMENT</option>
+                                <option value="Reflection">REFLECTION</option>
+                                <option value="Goals">GOALS</option>
+                            </select>
+                            <select id="sortEntries">
+                                <option value="newest">NEWEST FIRST</option>
+                                <option value="oldest">OLDEST FIRST</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="entries-container" id="entriesContainer">
+                        <!-- Sample entry - these would be dynamically generated -->
+                        <div class="entry-card">
+                            <div class="entry-header">
+                                <h3>First Match Analysis</h3>
+                                <span class="entry-date">April 10, 2025</span>
+                            </div>
+                            <div class="entry-tags">
+                                <span class="tag">STRATEGY</span>
+                                <span class="tag">REFLECTION</span>
+                            </div>
+                            <div class="entry-preview">
+                                Today's match was challenging but I learned a lot about positioning and timing...
+                            </div>
+                            <div class="entry-actions">
+                                <button class="action-button view">VIEW</button>
+                                <button class="action-button edit">EDIT</button>
+                                <button class="action-button delete">DELETE</button>
+                            </div>
+                        </div>
+                        
+                        <div class="entry-card">
+                            <div class="entry-header">
+                                <h3>New Strategy Development</h3>
+                                <span class="entry-date">April 8, 2025</span>
+                            </div>
+                            <div class="entry-tags">
+                                <span class="tag">STRATEGY</span>
+                                <span class="tag">GOALS</span>
+                            </div>
+                            <div class="entry-preview">
+                                I've been working on a new approach to defensive play that involves...
+                            </div>
+                            <div class="entry-actions">
+                                <button class="action-button view">VIEW</button>
+                                <button class="action-button edit">EDIT</button>
+                                <button class="action-button delete">DELETE</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 PROS DIARY | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </footer>
+    </div>
+    
+    <!-- Script for handling journal functionality -->
+    <script src="journal.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!-- signup.html (Sign Up Page) -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PROS DIARY - Sign Up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="signup-page">
+    <!-- Background elements -->
+    <div class="background-container">
+        <div class="diagonal-line"></div>
+        <div class="geometric-shape shape1"></div>
+        <div class="geometric-shape shape2"></div>
+        <div class="geometric-shape shape3"></div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="signup-container">
+            <div class="signup-header">
+                <h1>CREATE ACCOUNT</h1>
+                <p>Join the PROS DIARY community</p>
+            </div>
+            
+            <form class="signup-form">
+                <div class="form-group">
+                    <label for="username">USERNAME</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">EMAIL</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">PASSWORD</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">CONFIRM PASSWORD</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                
+                <div class="form-options">
+                    <div class="terms-checkbox">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the <a href="#">Terms of Service</a></label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="signup-button">CREATE ACCOUNT</button>
+                
+                <div class="login-option">
+                    <p>Already have an account? <a href="login.html">LOG IN</a></p>
+                </div>
+            </form>
+            
+            <div class="signup-footer">
+                <a href="index.html" class="back-to-home">&larr; BACK TO HOME</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
